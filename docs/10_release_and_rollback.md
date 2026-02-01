@@ -1,8 +1,8 @@
 # LIFE OS 2.0 — Release & Rollback
 
-**Document Version:** 1.0  
+**Document Version:** 1.1  
 **Last Updated:** 2025-02-01  
-**Status:** Stage 1 — Planning
+**Status:** Stage 2 — Repo setup
 
 ---
 
@@ -15,12 +15,49 @@
 
 ---
 
+## Stage Checkpoint (обязательно после КАЖДОГО этапа)
+
+В конце каждого этапа:
+
+1. **Обновить документы:**
+   - `docs/09_changelog.md` — что сделано
+   - `docs/08_qa_bug_tracker.md` — если есть баги
+2. **Проверить:** `git status` — изменения понятные
+3. **Коммит** с понятным сообщением
+4. **Тег** версии/чекпоинта
+5. **Push** ветки + push тегов
+
+### Common Push (скрипт)
+
+```bash
+./scripts/common_push.sh "chore: stage checkpoint (stage X) - <описание>" "v0.0.X-stageX"
+```
+
+Пример:
+```bash
+./scripts/common_push.sh "chore: stage2 checkpoint - docs scaffold" "v0.0.1-stage2"
+```
+
+### Ручные команды (если без скрипта)
+
+```bash
+git status
+git add .
+git commit -m "chore: stage checkpoint (stage X) - <описание>"
+git tag v0.0.X-stageX
+git push origin HEAD
+git push origin --tags
+```
+
+---
+
 ## Milestone Versions (Planned)
 
 | Version | Contents | Stage |
 |---------|----------|-------|
-| v0.1.0 | Repo setup, skeleton, routing | Stage 2–3 |
-| v0.2.0 | Data model, storage, persistence | Stage 4 |
+| v0.0.1-stage2 | Repo structure, docs scaffold, common_push.sh | Stage 2 |
+| v0.1.0 | App skeleton (SwiftUI, routing) | Stage 3 |
+| v0.2.0 | Data model, storage | Stage 4 |
 | v0.3.0 | Core UI components, theme | Stage 5 |
 | v0.4.0 | Category modules scaffolding | Stage 6 |
 | v0.5.0 | MVP features (all 5 categories) | Stage 7 |
@@ -32,7 +69,24 @@
 
 ## Rollback Steps
 
-### Code Rollback
+### Быстрый откат (без удаления истории)
+
+```bash
+git tag --list                           # посмотреть теги
+git checkout tags/v0.0.1-stage2          # откатить рабочее дерево к тегу
+git checkout develop                     # вернуться в develop
+```
+
+### Жёсткий откат ветки (осторожно)
+
+```bash
+git reset --hard v0.0.1-stage2
+git push --force-with-lease
+```
+
+Используем только если понимаем последствия. Обычно лучше через `git revert`.
+
+### Code Rollback (полный)
 
 1. Identify last stable tag: `git tag -l`
 2. Create rollback branch: `git checkout -b rollback-v0.X.Y <commit-or-tag>`

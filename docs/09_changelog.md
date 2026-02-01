@@ -9,7 +9,8 @@
 
 ### [Unreleased]
 
-*(Changes staged for next release)*
+- `scripts/common_push.sh` — автоматизация stage checkpoint
+- Обновление docs/10 с правилами Stage Checkpoint и rollback
 
 ---
 
