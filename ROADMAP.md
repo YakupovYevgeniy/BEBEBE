@@ -6,7 +6,7 @@
 |-------|------|--------|-----------|
 | 1 | **Planning** | ✅ Complete | v0.0.1 |
 | 2 | Repo + GitHub setup | Pending | v0.1.0 |
-| 3 | App skeleton (SwiftUI, routing) | Pending | v0.1.0 |
+| 3 | App skeleton (SwiftUI, routing) | Complete | v0.1.0 |
 | 4 | Data model + storage decision | Pending | v0.2.0 |
 | 5 | Core UI components library | Pending | v0.3.0 |
 | 6 | Category modules scaffolding | Pending | v0.4.0 |

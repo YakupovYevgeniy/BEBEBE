@@ -12,6 +12,19 @@ This file mirrors `/docs/09_changelog.md`. Keep both in sync for releases.
 
 ---
 
+## [0.1.0] — 2026-02-01 (Stage 3)
+
+### Added
+- SwiftUI app skeleton: Tab bar (Home, Categories, Quick Add)
+- Theme system: Day/Night with toggle
+- Placeholder views for Home, Categories, Quick Add
+
+### Changed
+- Root: MainTabView; ThemeManager injected
+- iOS target: 17.0
+
+---
+
 ## [0.0.3-stage2] — 2026-02-01
 
 ### Added
