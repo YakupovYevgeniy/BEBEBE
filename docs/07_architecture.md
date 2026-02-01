@@ -1,7 +1,7 @@
 # LIFE OS 2.0 — Architecture
 
 **Document Version:** 1.0  
-**Last Updated:** 2025-02-01  
+**Last Updated:** 2026-02-01  
 **Status:** Stage 1 — Planning
 
 ---

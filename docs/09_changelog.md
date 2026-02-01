@@ -1,7 +1,7 @@
 # LIFE OS 2.0 — Changelog
 
-**Document Version:** 1.0  
-**Last Updated:** 2025-02-01  
+**Document Version:** 1.1  
+**Last Updated:** 2026-02-01  
 
 ---
 
@@ -9,11 +9,36 @@
 
 ### [Unreleased]
 
-*(Changes staged for next release)*
+*(None)*
 
 ---
 
-### [0.0.1] — 2025-02-01
+### [0.0.3-stage2] — 2026-02-01
+
+#### Added
+- Convert SANSARA from submodule (mode 160000) to regular tracked folder
+- `.github/pull_request_template.md`
+- `.github/ISSUE_TEMPLATE/bug_report.md`
+- `.github/ISSUE_TEMPLATE/feature_request.md`
+- `.gitignore` (Xcode, DerivedData, xcuserdata)
+- Branch protection recommendations in docs/10
+
+#### Changed
+- docs/10: Rollback steps in English; add v0.0.3-stage2 to milestones
+
+#### Fixed
+- SANSARA no longer gitlink — full monorepo, clone includes Xcode project
+
+---
+
+### [0.0.2-stage2] — 2026-02-01
+
+- `scripts/common_push.sh` — stage checkpoint automation
+- docs/10: Stage Checkpoint rules, rollback commands
+
+---
+
+### [0.0.1] — 2026-02-01
 
 #### Added
 - Stage 1 planning package
