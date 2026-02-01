@@ -13,6 +13,24 @@
 
 ---
 
+### [0.1.0] — 2026-02-01 (Stage 3)
+
+#### Added
+- Theme system: Theme protocol, DayTheme, NightTheme, ThemeManager
+- MainTabView with Home, Categories, Quick Add tabs
+- HomeView, CategoriesView, QuickAddView (placeholder screens)
+- Day/Night theme toggle in HomeView toolbar
+- Core/Theme, Core/Extensions, Features/Home, Features/Categories, Features/QuickAdd structure
+
+#### Removed
+- ContentView, Item (SwiftData deferred to Stage 4)
+
+#### Changed
+- SANSARAApp: ThemeManager injection, MainTabView as root
+- iOS deployment target: 17.0
+
+---
+
 ### [0.0.3-stage2] — 2026-02-01
 
 #### Added

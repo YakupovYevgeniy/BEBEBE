@@ -2,31 +2,19 @@
 //  SANSARAApp.swift
 //  SANSARA
 //
-//  Created by Yevgeniy Yakupov on 01.02.2026.
+//  LIFE OS 2.0 — App entry point. SwiftData in Stage 4.
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct SANSARAApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    @State private var themeManager = ThemeManager(initial: .day)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environment(themeManager)
         }
-        .modelContainer(sharedModelContainer)
     }
 }

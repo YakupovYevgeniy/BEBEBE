@@ -71,7 +71,7 @@ git push origin --tags
 | v0.0.1-stage2 | Repo structure, docs scaffold | Stage 2 |
 | v0.0.2-stage2 | common_push.sh, Stage Checkpoint workflow | Stage 2 |
 | v0.0.3-stage2 | SANSARA submodule → regular folder, .github templates | Stage 2 |
-| v0.1.0 | App skeleton (SwiftUI, routing) | Stage 3 |
+| v0.1.0 | App skeleton (SwiftUI, tab bar, theme Day/Night) | Stage 3 |
 | v0.2.0 | Data model, storage | Stage 4 |
 | v0.3.0 | Core UI components, theme | Stage 5 |
 | v0.4.0 | Category modules scaffolding | Stage 6 |
