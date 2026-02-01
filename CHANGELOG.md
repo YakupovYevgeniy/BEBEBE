@@ -8,11 +8,23 @@ This file mirrors `/docs/09_changelog.md`. Keep both in sync for releases.
 
 ## [Unreleased]
 
-*(No unreleased changes)*
+*(None)*
 
 ---
 
-## [0.0.1] — 2025-02-01
+## [0.0.3-stage2] — 2026-02-01
+
+### Added
+- SANSARA as regular folder (submodule fix)
+- `.github/` templates: PR, bug report, feature request
+- `.gitignore` for Xcode
+
+### Fixed
+- Monorepo: clone now includes Xcode project files
+
+---
+
+## [0.0.1] — 2026-02-01
 
 ### Added
 

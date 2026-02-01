@@ -1,8 +1,8 @@
 # LIFE OS 2.0 — QA & Bug Tracker
 
 **Document Version:** 1.0  
-**Last Updated:** 2025-02-01  
-**Status:** Stage 1 — Planning
+**Last Updated:** 2026-02-01  
+**Status:** Stage 2 — Repo setup
 
 ---
 

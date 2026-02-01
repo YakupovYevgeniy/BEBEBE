@@ -1,8 +1,21 @@
 # LIFE OS 2.0 — Release & Rollback
 
-**Document Version:** 1.1  
-**Last Updated:** 2025-02-01  
-**Status:** Stage 2 — Repo setup
+**Document Version:** 1.2  
+**Last Updated:** 2026-02-01  
+**Status:** Stage 2 — Repo setup complete
+
+---
+
+## Branch Protection (GitHub — Optional)
+
+Recommended settings for `main`:
+
+- **Require pull request** — at least 1 approval
+- **Require status checks** — if CI is enabled
+- **Do not allow force push** — preserve history
+- **Require linear history** — optional; conflicts with merge commits
+
+`develop` can allow direct pushes for solo development. Enable protection when team grows.
 
 ---
 
@@ -55,7 +68,9 @@ git push origin --tags
 
 | Version | Contents | Stage |
 |---------|----------|-------|
-| v0.0.1-stage2 | Repo structure, docs scaffold, common_push.sh | Stage 2 |
+| v0.0.1-stage2 | Repo structure, docs scaffold | Stage 2 |
+| v0.0.2-stage2 | common_push.sh, Stage Checkpoint workflow | Stage 2 |
+| v0.0.3-stage2 | SANSARA submodule → regular folder, .github templates | Stage 2 |
 | v0.1.0 | App skeleton (SwiftUI, routing) | Stage 3 |
 | v0.2.0 | Data model, storage | Stage 4 |
 | v0.3.0 | Core UI components, theme | Stage 5 |
@@ -69,22 +84,29 @@ git push origin --tags
 
 ## Rollback Steps
 
-### Быстрый откат (без удаления истории)
+### Checkout tag (read-only, no history rewrite)
 
 ```bash
-git tag --list                           # посмотреть теги
-git checkout tags/v0.0.1-stage2          # откатить рабочее дерево к тегу
-git checkout develop                     # вернуться в develop
+git tag --list
+git checkout tags/v0.0.3-stage2
+git checkout develop
 ```
 
-### Жёсткий откат ветки (осторожно)
+### Revert (safe — preserves history)
 
 ```bash
-git reset --hard v0.0.1-stage2
+git revert <commit-hash>
+git push origin develop
+```
+
+### Hard reset (dangerous — rewrites history)
+
+```bash
+git reset --hard v0.0.3-stage2
 git push --force-with-lease
 ```
 
-Используем только если понимаем последствия. Обычно лучше через `git revert`.
+**Warning:** Only use when you understand the consequences. Prefer `git revert`.
 
 ### Code Rollback (полный)
 
